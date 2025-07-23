@@ -90,22 +90,27 @@
             'https://hyper-y-ollama-7.vercel.app/'
         ];
 
-        // Función para obtener una URL aleatoria
-        function getRandomUrl() {
-            const randomIndex = Math.floor(Math.random() * urls.length);
-            return urls[randomIndex];
+        // Get or set a persistent random URL for the user
+        function getPersistentUrl() {
+            let url = localStorage.getItem('hyperYUrl');
+            if (!url) {
+                const randomIndex = Math.floor(Math.random() * urls.length);
+                url = urls[randomIndex];
+                localStorage.setItem('hyperYUrl', url);
+            }
+            return url;
         }
 
-        // Redirección automática después de 2 segundos
+        // Redirect automatically after 1 second
         setTimeout(() => {
-            const randomUrl = getRandomUrl();
-            window.location.href = randomUrl;
-        }, 2000);
+            const url = getPersistentUrl();
+            window.location.href = url;
+        }, 1000);
 
-        // También permitir redirección inmediata si se hace clic en cualquier lugar
+        // Also allow immediate redirect on click
         document.body.addEventListener('click', () => {
-            const randomUrl = getRandomUrl();
-            window.location.href = randomUrl;
+            const url = getPersistentUrl();
+            window.location.href = url;
         });
     </script>
 </body>
