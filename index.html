@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hyper Y</title>
-    
+
     <!-- Meta tags para compartir en redes sociales -->
     <meta name="description" content="hyper Y">
     <meta property="og:title" content="hyper Y">
@@ -15,65 +16,74 @@
     <meta name="twitter:title" content="hyper Y">
     <meta name="twitter:description" content="hyper Y">
     <meta name="twitter:image" content="logo32.ico">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo32.ico">
     <link rel="apple-touch-icon" href="logo32.ico">
-    
+
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff4d4d 0%, #edb9b9 100%);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: #fff;
         }
-        
+
         .container {
             text-align: center;
         }
-        
+
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 360px;
             margin-bottom: 20px;
+            object-fit: contain;
+            text-shadow: #747775;
         }
-        
+
         h1 {
             font-size: 3rem;
             margin: 20px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px #eee;
+            color: #ff4d4d;
         }
-        
+
         .loading {
             font-size: 1.2rem;
             margin: 20px 0;
-            opacity: 0.8;
+            opacity: 0.85;
+            color: #eee;
         }
-        
+
         .spinner {
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 3px solid #eee;
             border-radius: 50%;
-            border-top: 3px solid white;
+            border-top: 3px solid #ff4d4d;
             width: 30px;
             height: 30px;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1 style="color: #e74343;">hyper Y</h1>
+        <img src="logo.png" alt="hyper Y Logo" class="logo">
         <div class="loading">Redirecting...</div>
         <div class="spinner"></div>
     </div>
@@ -114,4 +124,5 @@
         });
     </script>
 </body>
+
 </html>
