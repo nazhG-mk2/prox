@@ -89,7 +89,8 @@
     </div>
 
     <script>
-        // Array de URLs para redirección aleatoria
+        // Array de URLs para redirección aleatoria (commented out)
+        /*
         const urls = [
             'https://hyper-y-ollama.vercel.app/',
             'https://hyper-y-ollama-2.vercel.app',
@@ -110,17 +111,19 @@
             }
             return url;
         }
+        */
+
+        // Direct redirect to new URL
+        const redirectUrl = 'https://hyper-y.vercel.app/chat?token=0';
 
         // Redirect automatically after 1 second
         setTimeout(() => {
-            const url = getPersistentUrl();
-            window.location.href = url;
+            window.location.href = redirectUrl;
         }, 1000);
 
         // Also allow immediate redirect on click
         document.body.addEventListener('click', () => {
-            const url = getPersistentUrl();
-            window.location.href = url;
+            window.location.href = redirectUrl;
         });
     </script>
 </body>
